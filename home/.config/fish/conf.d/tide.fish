@@ -1,0 +1,1 @@
+/Users/gregwalsh/git/dotfiles/dots/macos/yabai/home/.config/fish/conf.d/tide.fish

@@ -14,7 +14,9 @@ default, window < ctrl - escape ; scripts
 
 # Application launchers
 default < cmd + shift - return : alacritty #open over top
-default < cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+#default < cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+default < cmd + alt - return : open /Applications/iTerm.app
+ctrl + cmd - t : osascript ~/new-iterm-window.scpt
 default < cmd + alt + ctrl - v : open /Applications/Visual\ Studio\ Code.app
 default < cmd + alt + ctrl - o : open /Applications/Microsoft\ Outlook.app
 default < cmd + alt + ctrl - p : open /Applications/Microsoft\ PowerPoint.app
@@ -22,12 +24,18 @@ default < cmd + alt + ctrl - f : open /Applications/Firefox\ Developer\ Edition.
 default < cmd + alt + ctrl - t : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # MacOS Commands
-default < cmd - l : osascript -e 'tell application "System Events" to keystroke "q" using {command down,control down}';
+#default < cmd - l : osascript -e 'tell application "System Events" to keystroke "q" using {command down,control down}';
 default < meh - r : osascript -e 'tell app "loginwindow" to «event aevtrrst»';
 default < meh - p : osascript -e 'tell app "loginwindow" to «event aevtrsdn»';
 
 # Reload yabai 
-default < ctrl + lalt + cmd - r : bash -c 'launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"'
+default < ctrl + lalt + cmd - r : zsh -c 'yabai --restart-service'
+
+# Stop yabai
+default < ctrl + lalt + cmd - s : zsh -c 'yabai --stop-service'
+
+# Stary yabai
+default < ctrl + lalt + cmd - y : zsh -c 'yabai --start-service'
 
 # Toggle split orientation of the selected windows node: shift + lalt - s
 default < shift + lalt - s : yabai -m window --toggle split
@@ -50,12 +58,14 @@ default < cmd + ctrl - right : yabai -m space --focus next
 # Focus last focused space
 default < cmd + ctrl - x :  yabai -m space --focus recent
 
+
+
 default < cmd + ctrl - 1 : yabai -m space --focus 1 
 default < cmd + ctrl - 2 : yabai -m space --focus 2 
 default < cmd + ctrl - 3 : yabai -m space --focus 3 
 default < cmd + ctrl - 4 : yabai -m space --focus 4 
 default < cmd + ctrl - 5 : yabai -m space --focus 5 
-default < cmd + ctrl - 6 : yabai -m space --focus 6 
+default < cmd + ctrl - 6 : yabai -m space --focus 6
 default < cmd + ctrl - 7 : yabai -m space --focus 7 
 default < cmd + ctrl - 8 : yabai -m space --focus 8 
 
@@ -162,4 +172,6 @@ default < lalt - p : yabai -m window --toggle sticky; \
 default < shift + lalt - z : yabai -m space --layout bsp
 default < shift + lalt - x : yabai -m space --layout float
 default < shift + lalt - c : yabai -m space --layout stack
+
+alt - m : yabai -m window --toggle topmost; yabai -m window --toggle topmost
 

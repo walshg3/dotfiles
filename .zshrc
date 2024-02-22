@@ -54,7 +54,7 @@ git sudo web-search history macos zsh-navigation-tools zsh-interactive-cd
 web-search wd vscode urltools universalarchive tmux tig themes
 rsync ripgrep react-native pip nvm npm node ng gitignore
 github git-prompt git-flow fzf dotnet docker command-not-found
-colorize colored-man-pages brew )
+colorize colored-man-pages brew zsh-ssh)
 
 # zsh completions 
 if type brew &>/dev/null; then
@@ -131,8 +131,6 @@ eval "$(starship init zsh)"
 
 
 
-# Github Copilot-CLI
-eval "$(github-copilot-cli alias -- "$0")"
 
 # The Fuck
 eval $(thefuck --alias)
@@ -140,18 +138,18 @@ eval $(thefuck --alias)
 # alias
 alias nmap='grc nmap'
 # alias cat='ccat'
-alias ls='exa -a --color=always --group-directories-first --icons'
-#alias ls='exa --icons'
-alias ll='exa -l'
+alias ls='eza -a --color=always --group-directories-first --icons'
+#alias ls='eza --icons'
+alias ll='eza -l'
 # sort by size
-alias lls='exa -lS'
+alias lls='eza -lS'
 # sort by date
-alias lld='exa -lD'
+alias lld='eza -lD'
 
-alias la='exa -la'
-alias l='exa -l'
-alias lsd='exa -d */'
-alias lla='exa -la'
+alias la='eza -la'
+alias l='eza -l'
+alias lsd='eza -d */'
+alias lla='eza -la'
 
 # Chroma Term
 # alias ssh="ct ssh"
